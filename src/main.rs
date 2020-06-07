@@ -21,14 +21,11 @@ fn main() {
 fn validate_cc(cc_number: &str) -> bool{
 
     let n_digits: usize = cc_number.chars().count();
-    // println!("Digits: {}", n_digits);
-    // println!("Len: {}", cc_number.len());
     let mut cc_sum: u32 = match cc_number.chars().last().unwrap().to_digit(10) {
         Some(num) => num,
         None => {10},
     };
     let parity : usize = n_digits % 2;
-    // println!("Parity: {}", parity);
     let num_max = 9;
 
     for (i, c) in cc_number.chars().enumerate() {
@@ -39,14 +36,13 @@ fn validate_cc(cc_number: &str) -> bool{
         if i == n_digits - 1{
             break;
         }
-        if i % 2 == parity { // This is broken because we take the whole string rather cc_number.len -1
+        if i % 2 == parity {
             digit = digit * 2;
         }
         if digit > num_max {
             digit = digit - num_max;
         }
         if i < n_digits - 1{
-            //println!("out: {}: {}", i, digit);
             cc_sum += digit;
         }
     }
