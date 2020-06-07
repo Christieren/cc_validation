@@ -1,6 +1,6 @@
 use std::io;
 
-// Example number to test with: Visa: 4716718003943986 / Master Card: 5159262821225525 / AMEX: 341752169978719
+// Example fake numbers to test with: Visa: 4716718003943986 / Master Card: 5159262821225525 / AMEX: 341752169978719
 fn main() {
     let mut cc_number = String::new();
 
