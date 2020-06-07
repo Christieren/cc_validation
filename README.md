@@ -20,3 +20,6 @@ This is the pseudo code that I followed for the validation(Source: https://en.wi
     // }
     // return (sum modulus 10) = 0
 ```
+## Known issues
+1. Will panic if no input supplied.
+2. Will return valid for a string containing the same alpha character(s).
