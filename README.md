@@ -21,5 +21,4 @@ This is the [pseudo code](https://en.wikipedia.org/wiki/Luhn_algorithm#Pseudocod
      return (sum modulus 10) = 0
 ```
 ## Known issues
-1. Will panic if no input supplied.
-2. Will return valid for a string containing the same alpha character(s).
+1. Will return valid for a string containing the same alpha character(s).
