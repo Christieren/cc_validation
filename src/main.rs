@@ -4,7 +4,6 @@ fn main() {
     let mut cc_number = String::new();
 
     println!("Enter a credit card number:");
-    //io::stdout().flush().unwrap();
     io::stdin()
         .read_line(&mut cc_number)
         .expect("Failed to read line!");
