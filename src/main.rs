@@ -1,6 +1,5 @@
-use std::io;
-//use std::io::{self, Write};
 // Example fake numbers to test with: Visa: 4716718003943986 / Master Card: 5159262821225525 / AMEX: 341752169978719
+use std::io;
 fn main() {
     let mut cc_number = String::new();
 
@@ -16,7 +15,7 @@ fn main() {
             println!("Number is valid!");
         }
         else{
-            println!("Number is invald...");
+            println!("Number is invalid...");
         }
     }
     else{
@@ -27,11 +26,7 @@ fn main() {
 fn validate_cc(cc_number: &str) -> bool{
 
     let n_digits: usize = cc_number.chars().count();
-    // let mut cc_sum: u32 = match cc_number.chars().last().unwrap().to_digit(10) {
-    //     Some(num) => num,
-    //     None => {10},
-    // };
-
+   
     let cc_sum_opt: Option<u32> = cc_number.chars().last().unwrap().to_digit(10);
     let mut cc_sum: u32 = 0;
 
