@@ -58,3 +58,30 @@ fn validate_cc(cc_number: &str) -> bool{
     }
         return (cc_sum % 10) == 0;
 }
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn valid_visa() {
+        assert_eq!(crate::validate_cc("4716718003943986"), true);
+    }
+    #[test]
+    fn valid_amex() {
+        assert_eq!(crate::validate_cc("341752169978719"), true);
+    }
+    #[test]
+    fn invalid_mastercard() {
+        assert_eq!(crate::validate_cc("51592623333225525"), false);
+    }
+    #[test]
+    fn invalid_visa() {
+        assert_eq!(crate::validate_cc("4716733303943986"), false);
+    }
+    #[test]
+    fn invalid_amex() {
+        assert_eq!(crate::validate_cc("341753339978719"), false);
+    }
+    #[test]
+    fn valid_mastercard() {
+        assert_eq!(crate::validate_cc("5159262821225525"), true);
+    }
+}
