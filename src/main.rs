@@ -84,4 +84,8 @@ mod tests {
     fn valid_mastercard() {
         assert_eq!(crate::validate_cc("5159262821225525"), true);
     }
+    #[test]
+    fn invalid_input() {
+        assert_eq!(crate::validate_cc("AAAAAAAAAAAAAAAA"), false);
+    }
 }
